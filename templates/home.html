@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> pwdKeep | Home </title>
+        <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='home.css') }}">
+        <meta charset="UTF-8"/>
+        <meta name="language" content="en" />
+        <meta name="description" content="************INFORMATION HERE************"/>
+        <meta name="keywords" content="************CONTENT HERE************"/>
+        <meta name="author" content="Jeremiah Spears, Courtney Frazier"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!--<script src="pwdKeep.js"></script>-->
+    </head>
+    <body>
+        <main>
+            <p>{{user}}</p>
+            <div id="divForm">
+                <form id="frmAddService" action="" target="">
+					<h4> Add a Service: </h4>
+                    <label for="service"> Service Name: </label>
+						<input type="text" id="service" name="service" /> <br/>
+					<label for="username"> Username: </label>
+                        <input type="text" id="username" name="username" /> <br/>
+                    <label for="password"> Password: </label>
+                        <input type="password" id="password" name="password" /> <br/>
+                    <br/>
+                    <input type="submit" id="btnAdd" value="Add Service" class="formBtn">
+                    {% if error %}
+                        <p id="errMsg">{{error}}</p>
+                    {% endif %}
+                </form>
+            </div>
+			<div id="view">
+                <h2 style="text-align: center;"> Services </h2>
+				<div id="serviceView"> 
+                    <p id="services">{{services}}</p>
+                    <!-- pwdKeep.js : addService() -->
+				</div>
+				<div id="serviceInfo">
+					<!-- pwdKeep.js : -->
+				</div>
+			</div>
+        </main>
+    </body>
+</html>

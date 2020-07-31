@@ -1,0 +1,75 @@
+form {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: skyblue;
+    background: linear-gradient(to right, skyblue, steelblue);
+    border: 2px solid steelblue;
+    border-radius: 1.5em;
+    padding: 1em;
+}
+h4 {
+	margin-top: -.5em;
+	color: white;
+}
+label, input {
+    margin-bottom: .25em;
+}
+label {
+    color: black;
+    background: -webkit-linear-gradient(45deg, whitesmoke, white 80%);
+    font-weight: bold;
+    padding-right: 1em;
+    float: left;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+input {
+    font-weight: bold;
+    color: darkblue;
+    float: right;
+    border-color: steelblue;
+    border-style: none none solid solid;
+    border-bottom-color: #fafaff;
+    background-color: #fefeff;
+}
+#errMsg {
+	float: right;
+	width: 100%;
+    color: white;
+	font-weight: bold;
+	background-color: rgba(255, 255, 255, .3);
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid darkblue;
+}
+#divForm {
+    text-align: center;
+}
+.formBtn {
+    font-weight: bold;
+    background-color: steelblue;
+    color: whitesmoke;
+    white-space: nowrap; 
+    border-radius: .5em;
+    border: 1px solid skyblue;
+    padding: .5em;
+	margin-left: .25em;
+	margin-right: .25em;
+	margin-top: 1em;
+}
+
+@media only screen and (max-width: 360px) {
+    input {
+        float: none;
+        white-space: nowrap;
+        width: 100%;
+    }
+    #divForm {
+        padding-top: 0%;
+    }
+	.formBtn {
+        font-size: 1em;
+		margin-left: 0;
+		margin-right: 0;
+    }
+}
