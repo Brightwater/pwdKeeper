@@ -6,7 +6,9 @@ function addServices() {
 	
 	for (i = 1; i < services.length; i += 2) {
 		addService(services[i]);
-	}
+    }
+    // Deletes the services string afterwards
+    document.getElementById("services").innerHTML = "";
 }
 
 // Creates individual service widgets
