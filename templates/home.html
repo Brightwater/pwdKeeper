@@ -5,15 +5,15 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
         <meta charset="UTF-8"/>
         <meta name="language" content="en" />
-        <meta name="description" content="************INFORMATION HERE************"/>
-        <meta name="keywords" content="************CONTENT HERE************"/>
+        <meta name="description" content="A small application for storing your passwords."/>
+        <meta name="keywords" content="SSL, password, keeper, pwdKeep"/>
         <meta name="author" content="Jeremiah Spears, Courtney Frazier"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script>
     </head>
     <body>
         <main>
-            <p>{{user}}</p>
+            <p id="activeUser">User: {{user}}</p>
             <div id="divForm">
                 <form id="frmAddService" action="" target="">
 					<h4> Add a Service: </h4>
@@ -32,14 +32,18 @@
             </div>
 			<div id="view">
                 <h2 style="text-align: center;"> Services </h2>
-				<div id="serviceView"> 
-                    <p id="services">{{services}}</p>
-                    <!-- pwdKeep.js : addService() -->
-				</div>
+                <form id="frmService" action="/getService" method="POST">
+                    <div id="serviceView"> 
+                        <p id="services">{{services}}</p>
+                        <!-- home.js : addServices() -->
+                    </div>
+                </form>
 				<div id="serviceInfo">
-					<!-- pwdKeep.js : -->
+					{% if info %}
+                        {{info}}
+                    {% endif %}
 				</div>
-			</div>
+            </div>
         </main>
     </body>
 </html>

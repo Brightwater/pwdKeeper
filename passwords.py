@@ -11,7 +11,6 @@ from base64 import urlsafe_b64encode
 
 loggedIn = False
 user = ""
-#key = "6KJH0OgipHCD-GZJ_R6iMNDfy-aB5RuYRRvPpmM_HtU="
 salt = b'cVC\xc3w\x8f\xeb\xbf\xd2g\x9b\xa2\x86;;b'
 salt2 = b"\xbb\x06'=kVd\xe0\xbe\xa7\x8f\x83\x87\xc3%\x84"
 try:
@@ -117,8 +116,8 @@ def getServiceCredentials(username, serviceName, masterPassword):
         return 0, None
 
     string = f"service: {res[1][i]}\nusername: {res[0][i]}\npassword: {decryptedPwd}"
-    
-    return string, None
+    string2 = f"<b>{res[1][i]}</b><p>Username: {res[0][i]}<br>Password: {decryptedPwd}</p>"
+    return string, string2
 
 def newUser(username, unencryptedPassword):
     encryptedPwd = encryptMasterPassword(unencryptedPassword).decode()
@@ -211,8 +210,6 @@ def pwdDecrypt(encryptedPwd, k):
     except Exception as error:
         print(error)
         pass
-
-    
 
 def disconnect():
     if(connection):

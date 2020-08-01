@@ -16,11 +16,25 @@ function addService(name) {
 	var serviceView = document.getElementById("serviceView"); 	// button title
 	var divId = name.replace(' ', '_');							// div ids are the service's name with "_" instead of " "
 	
-	serviceView.innerHTML += '<button id="btn' + divId + '" onclick="toggleHidden(this.id)">' + name + ' </button>';
+    serviceView.innerHTML += '<button id="btn' + divId + '" name="btnSubmit" type="submit" value="' + name + '">' + name + '</button>';
+    serviceView.style.display = "block";
 }
 
+// Inserts HTML produced by passwords.py : getServiceCredentials();
+function activeService() {
+    var serviceInfo = document.getElementById("serviceInfo");
+    
+    if (serviceInfo.textContent.trim().length > 0) {
+        strInfo = serviceInfo.textContent;
+        serviceInfo.innerHTML = strInfo;
+    }
+    serviceInfo.style.display = "block";
+}
+
+// Runs all required events
 function loadPage() {
-	addServices();
+    addServices();
+    activeService();
 }
 
 // Runs once page is loaded
