@@ -65,6 +65,7 @@ def addService(username, masterPassword, serviceName, serviceUsername, servicePa
     try:
         encryptedPwd = servicePwdEncrypt(servicePassword, masterPassword)
         ep = encryptedPwd.decode()
+        print("adding", username, masterPassword, serviceName, serviceUsername, ep)
         sql1 = """UPDATE pwd
             SET services = array_append(services, %s)
             WHERE login = %s"""
@@ -78,6 +79,8 @@ def addService(username, masterPassword, serviceName, serviceUsername, servicePa
         cursor.execute(sql2, (serviceUsername, username,))
         cursor.execute(sql3, (ep, username,))
         connection.commit()
+        print("SHould have been a success")
+        return 1
     except:
         return -1
 

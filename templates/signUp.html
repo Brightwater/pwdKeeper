@@ -20,10 +20,15 @@
                     <label for="password"> Enter Password: </label>
                         <input type="password" id="password" name="password" /> <br/>
                     <label for="password2"> Re-Enter Password: </label>
-                        <input type="password2" id="password2" name="password2" /> <br/>
+                        <input type="password" id="password2" name="password2" /> <br/>
                     <br/>
                     <!--<input type="submit" id="btnSubmit" value="Submit" class="formBtn">-->
-                    <input type="submit" id="btnSignUp" value="Sign Up" class="formBtn">
+                    {% if not s %}
+                        <input type="submit" id="btnSignUp" name="btnSignUp" value="Sign Up" class="formBtn">
+                    {% endif %}
+                    {% if s %}
+                        <input type="submit" id="btnSignUp" name="btnSignUp" value="Return to login" class="formBtn">    
+                    {% endif %}
                     {% if error %}
                         <p id="errMsg">{{error}}</p>
                     {% endif %}

@@ -15,7 +15,7 @@
         <main>
             <p id="activeUser">User: {{user}}</p>
             <div id="divForm">
-                <form id="frmAddService" action="" target="">
+                <form id="frmAddService" action="#" method="post">
 					<h4> Add a Service: </h4>
                     <label for="service"> Service Name: </label>
 						<input type="text" id="service" name="service" /> <br/>
@@ -24,7 +24,7 @@
                     <label for="password"> Password: </label>
                         <input type="password" id="password" name="password" /> <br/>
                     <br/>
-                    <input type="submit" id="btnAdd" value="Add Service" class="formBtn">
+                    <input type="submit" id="btnAdd" name="btnAdd" value="Add Service" class="formBtn">
                     {% if error %}
                         <p id="errMsg">{{error}}</p>
                     {% endif %}
