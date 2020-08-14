@@ -14,7 +14,7 @@ user = ""
 salt = b'cVC\xc3w\x8f\xeb\xbf\xd2g\x9b\xa2\x86;;b'
 salt2 = b"\xbb\x06'=kVd\xe0\xbe\xa7\x8f\x83\x87\xc3%\x84"
 try:
-    connection = psycopg2.connect(user = "py", password= "Engage14engage14", host = "127.0.0.1", port = "5432", database = "pydb")
+    connection = psycopg2.connect(user = "py", password= "", host = "127.0.0.1", port = "5432", database = "pydb")
 
     cursor = connection.cursor()
 
